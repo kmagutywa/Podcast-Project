@@ -50,12 +50,14 @@ const getAllPodcasts = async() => {
 
     let newHtml = ''
 
-    for (const {id,title, seasons } of data) {
+    for (const {id,title, image,description, seasons } of data) {
         newHtml=  `
         ${newHtml} 
            <li>
+           <img src = "${image}" width = "100" height = "100">
                <button data-preview-button="${id}">${title} </button>
-               <span>(${seasons})</span>
+               <span> ${description}</span>
+               <span>(${seasons} seasons )</span>
           </li> 
         `
     }
