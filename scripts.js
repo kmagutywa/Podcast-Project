@@ -1,1 +1,1 @@
-import './api.js'
+import './modules/main.js'
