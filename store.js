@@ -54,7 +54,7 @@ class Store {
 
     }
     /**
-     * @param {Partial<import('../types').state>} newState 
+     * @param {Partial<import('./types').state>} newState 
      */
     update(newState) {
         const prevState = { ... this.state }
@@ -68,7 +68,7 @@ class Store {
     }
     /**
      * 
-     * @param {import('../types')} subscription 
+     * @param {import('./types')} subscription 
      */
     subscribe(newSubscription) {
         if (this.subscriptions.includes(newSubscription)) {
@@ -80,7 +80,7 @@ class Store {
     }
     /**
      * 
-     * @param {import('../types')} subscription 
+     * @param {import('./types')} subscription 
      */
 
     unsubscribe(newSubscription) {
@@ -95,13 +95,13 @@ class Store {
 
     constructor() {
         /**
-         * @type {import('../types').subscription[]}
+         * @type {import('./types').subscription[]}
          */
 
         this.subscriptions = []
 
         /**
-        * @type {import('../types').state}
+        * @type {import('./types').state}
         */
         this.state = {
             phase: 'loading',

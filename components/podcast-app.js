@@ -1,5 +1,6 @@
 import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
-import {store} from '../utils/store.js'
+import {store} from '../store.js'
+
 
 class Component extends LitElement {
     static get properties() {
@@ -7,6 +8,7 @@ class Component extends LitElement {
             phase: {state: true},
         }
     }
+
     constructor() {
         super()
         const state = store.subscribe(this.storeChange)
@@ -23,7 +25,7 @@ class Component extends LitElement {
     }
 
     disconnectedCallback() {store.unsubscribe(this.storeChange)}
-   
+  
     render() {
         const loadSingleHandler = () => store.loadSingle('10182')
         const loadListHandler = () => store.loadList()
@@ -51,8 +53,6 @@ class Component extends LitElement {
             </div>`
         }
         throw new Error('Invalid view active')
-
-
     }
 }
 
