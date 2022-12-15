@@ -1,10 +1,14 @@
+:root {
+    --primary-blue: #1d84B5;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    background: rgb(95, 95, 95);
+    background: rgb(189, 189, 189);
     display: flex;
     flex-direction:column;
     

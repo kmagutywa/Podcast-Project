@@ -1,4 +1,4 @@
-import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
+import { html, LitElement, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
 import {store} from '../store.js'
 
 
@@ -8,6 +8,8 @@ class Component extends LitElement {
             single: {state: true},
         }
     }
+
+  
 
     constructor() {
         super()
@@ -26,6 +28,17 @@ class Component extends LitElement {
 
     disconnectedCallback() {store.unsubscribe(this.storeChange)}
   
+    static styles = css`
+    h1{
+        color:purple;
+        }
+    img{
+        width: 200px;
+        height: 200px;
+    }
+    `;
+
+
     render() {
 
         /**
@@ -33,9 +46,11 @@ class Component extends LitElement {
          */
         const show = this.single
 
-        return html`<div>
-            ${show.title}
-    </div>`
+        return html`<h1>
+            ${show.title || ''}
+    </h1>
+    <span><img src = "${show.image}"></span>
+    <p>${show.seasons}</p>`
     }
 }
 customElements.define('podcast-view-single',Component)

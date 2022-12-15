@@ -9,6 +9,8 @@ class Component extends LitElement {
         }
     }
 
+    
+
     constructor() {
         super()
         const state = store.subscribe(this.storeChange)
